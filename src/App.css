@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------------- LANDING PAGE ---------------- */
+.landingPage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: black;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.hero {
+  height: 100vh;
+}
+
+/* ---------------- PAGE TWO ---------------- */
+.pageTwo {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* 🌌 Glowing pulse line between pages (matches title glow) */
+.pageTwo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;                /* slightly inset from edges */
+  height: 3px;               /* thin line */
+  background-color: #00bfff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.6),
+              0 0 20px rgba(0, 191, 255, 0.4);
+  z-index: 10;
+  animation: glowPulse 2.5s ease-in-out infinite alternate;
+}
+
+/* ✨ Pulse effect — same as the title */
+@keyframes glowPulse {
+  from {
+    box-shadow: 0 0 8px rgba(0, 191, 255, 0.5),
+                0 0 15px rgba(0, 191, 255, 0.3);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.8),
+                0 0 35px rgba(0, 191, 255, 0.6);
+  }
+}
+
+
+
+/* ---------------- ANIMATION CANVAS ---------------- */
+.askAnime {
+  position: absolute;
+  top: 240px;
+  left: 740px;
+  width: calc(60% + 100px);
+  height: 60%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.askAnime canvas {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+
+
+
+/* PAGE Three */
+/* ---------------- PAGE THREE ---------------- */
+.pageThree {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* 🌌 Glowing pulse line above Page Three (same as Page Two) */
+.pageThree::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 3px;
+  background-color: #00bfff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.6),
+              0 0 20px rgba(0, 191, 255, 0.4);
+  z-index: 10;
+  animation: glowPulse 2.5s ease-in-out infinite alternate;
+}
+
+
+
+/* ---------------- ABOUT PAGE ---------------- */
+.pageAbout {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* 🌌 Glowing divider like other pages */
+.pageAbout::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 3px;
+  background-color: #00bfff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.6),
+              0 0 20px rgba(0, 191, 255, 0.4);
+  animation: glowPulse 2.5s ease-in-out infinite alternate;
+}
+
+/* Hover Animation (Spline Background) */
+.hover {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+  overflow: hidden;
+  opacity: 0.9;
+}
+
+
+
+
+
+/* ---------------- CONTACT PAGE FOUR ---------------- */
+.pageContactfour {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+  z-index: 1; /* ensures it's above background layers */
+}
+
+/* 🌌 Glowing divider line ABOVE contact page */
+.pageContactfour::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 3px;
+  background-color: #00bfff;
+  border-radius: 10px;
+  box-shadow:
+    0 0 10px rgba(0, 191, 255, 0.6),
+    0 0 20px rgba(0, 191, 255, 0.4);
+  z-index: 10; /* show on top */
+  animation: glowPulse 2.5s ease-in-out infinite alternate;
+}
+
+/* ✨ Reuse the glowing pulse animation */
+@keyframes glowPulse {
+  from {
+    box-shadow: 0 0 8px rgba(0, 191, 255, 0.5),
+                0 0 15px rgba(0, 191, 255, 0.3);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.8),
+                0 0 35px rgba(0, 191, 255, 0.6);
+  }
+}

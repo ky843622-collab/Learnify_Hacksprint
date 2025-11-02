@@ -1,0 +1,161 @@
+/* Import Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+/* --- Page Container --- */
+.pageTwoContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align form to the left side */
+  color: white;
+  z-index: 2;
+  position: absolute;
+  top: 70px;
+  padding-left: 6%; /* gives breathing room from left edge */
+  font-family: "Poppins", sans-serif;
+}
+
+/* --- Form Section --- */
+.askSection {
+  background: #0d0d0d; /* slightly elevated black */
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  width: 40%; /* form width */
+  height: 75%; /* covers 75% of screen height */
+  padding: 2.5rem;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 3; /* stays above the animation */
+  transition: 0.3s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.askSection h2 {
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #00bfff; /* subtle blue accent */
+  letter-spacing: 1px;
+  font-size: 1.8rem;
+}
+
+/* --- Form Inputs --- */
+.askSection form {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.askSection input {
+  width: 70%;
+  padding: 0.8rem 1rem;
+  background-color: #111;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.askSection input:focus {
+  border-color: #00bfff;
+  box-shadow: 0 0 8px rgba(0, 191, 255, 0.4);
+}
+
+.askSection button {
+  padding: 0.8rem 1.5rem;
+  background: #00bfff;
+  color: black;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: "Poppins", sans-serif;
+}
+
+.askSection button:hover {
+  background: #0099cc;
+}
+
+/* --- Answer Box --- */
+.answerBox {
+  background-color: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 1rem;
+  height: 250px;
+  overflow-y: auto;
+  color: #ddd;
+  text-align: left;
+  line-height: 1.5;
+  scrollbar-width: thin;
+  scrollbar-color: #00bfff #0a0a0a;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Scrollbar styling */
+.answerBox::-webkit-scrollbar {
+  width: 6px;
+}
+
+.answerBox::-webkit-scrollbar-thumb {
+  background-color: #00bfff;
+  border-radius: 10px;
+}
+
+.answerBox::-webkit-scrollbar-track {
+  background-color: #0a0a0a;
+}
+
+/* --- Page Title --- */
+.pageTwoTitle {
+  position: absolute;
+  top: 0; /* top of the page */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  font-weight: 600;
+  color: #00bfff;
+  text-shadow: 0 0 10px rgba(0, 191, 255, 0.8),
+               0 0 20px rgba(0, 191, 255, 0.6),
+               0 0 30px rgba(0, 191, 255, 0.4);
+  letter-spacing: 2px;
+  font-family: "Orbitron", sans-serif;
+  text-align: center;
+  z-index: 5;
+  animation: glowPulse 2.5s ease-in-out infinite alternate;
+}
+
+/* --- Title Glow Animation --- */
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.5),
+                 0 0 20px rgba(0, 191, 255, 0.3);
+  }
+  to {
+    text-shadow: 0 0 30px rgba(0, 191, 255, 1),
+                 0 0 45px rgba(0, 191, 255, 0.8);
+  }
+}
+
+
+
+.typingText::after {
+  content: "|";
+  animation: blink 0.8s step-end infinite;
+  color: #00bfff;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  from, to { opacity: 0; }
+  50% { opacity: 1; }
+}

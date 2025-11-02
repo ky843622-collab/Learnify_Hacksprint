@@ -1,0 +1,137 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 40px; /* ✅ Equal left-right spacing */
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  z-index: 10000;
+}
+
+.logo{
+    color: white;
+}
+.logo *{
+    width: 120px;
+    height: 50px;
+}
+
+/* 💧 Glass Nav Container */
+.glass {
+  flex: 1; /* ✅ Centers nav automatically between logo and button */
+  max-width: 500px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  margin: 0 40px;
+
+  /* Glass effect */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: brightness(1.15) blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
+}
+
+.glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  z-index: 0;
+  box-shadow: inset 6px 6px 0px -6px rgba(255, 255, 255, 0.7),
+              inset 0 0 8px 1px rgba(255, 255, 255, 0.7);
+}
+
+/* 🔹 Nav Items */
+.glass ul {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+.glass ul li {
+  list-style-type: none;
+  color: white;
+  font-size: 18px;
+  font-family: "Outfit", sans-serif;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+
+
+/* 💫 Contact Button */
+.btn button {
+  height: 42px;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  border: none;
+  border-radius: 30px;
+  color: #111;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn button:hover {
+  color: white;
+  transform: translateY(4px);
+  scale: 1.1;
+  box-shadow: 0 8px 30px rgba(0, 212, 255, 0.5);
+  background: linear-gradient(135deg, #00d4ff, #007bff);
+}
+
+.btn button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.4), rgba(0, 123, 255, 0.4));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  filter: blur(6px);
+  z-index: -1;
+}
+
+.btn button:hover::after {
+  opacity: 1;
+}
+
+
+.glass ul li {
+  list-style-type: none;
+  color: white;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  padding: 8px 18px;
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* 🌫️ Soft grey-glass hover */
+.glass ul li:hover {
+  background: rgba(255, 255, 255, 0.15); /* translucent greyish tint */
+  backdrop-filter: blur(6px) brightness(1.2);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}

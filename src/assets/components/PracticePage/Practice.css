@@ -1,0 +1,345 @@
+/* 🌐 Import Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+/* === 🧠 PRACTICE PAGE LAYOUT === */
+.practice {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 4rem;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* === TITLE === */
+/* === PRACTICE MODE TITLE === */
+.title {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  /* 🌈 Gradient Text Animation */
+  background: linear-gradient(90deg, #00eaff, #00ffcc, #007fff, #00eaff);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  /* ✨ Glow Effect */
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+
+  /* 🔁 Animation */
+  animation: titleGradientFlow 5s ease-in-out infinite,
+             titleGlowPulse 2.5s ease-in-out infinite;
+}
+
+/* === GRADIENT MOVEMENT === */
+@keyframes titleGradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* === SOFT GLOW PULSE === */
+@keyframes titleGlowPulse {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3),
+                 0 0 20px rgba(0, 191, 255, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(0, 255, 255, 0.8),
+                 0 0 40px rgba(0, 191, 255, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3),
+                 0 0 20px rgba(0, 191, 255, 0.2);
+  }
+}
+
+
+/* === BOX STYLES === */
+.left,
+.right {
+  width: 45%;
+  height: 75%;
+  background: #0d0d0d;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* === INPUT BAR === */
+.inputBar {
+  display: flex;
+  gap: 1rem;
+}
+
+.inputBar input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  background: #111;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.inputBar input:focus {
+  border-color: #00bfff;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+
+.inputBar button {
+  padding: 0.8rem 1.2rem;
+  background: #00bfff;
+  color: black;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.inputBar button:hover {
+  background: #0099cc;
+}
+
+/* === QUESTION + ANSWER BOXES === */
+.questionBox,
+.answerBox {
+  flex: 1;
+  background: #0a0a0a;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1rem;
+  overflow-y: auto;
+  line-height: 1.5;
+  font-size: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #00bfff #0a0a0a;
+}
+
+/* Scrollbars (Chrome, Edge, etc.) */
+.questionBox::-webkit-scrollbar,
+.answerBox::-webkit-scrollbar {
+  width: 6px;
+}
+
+.questionBox::-webkit-scrollbar-thumb,
+.answerBox::-webkit-scrollbar-thumb {
+  background-color: #00bfff;
+  border-radius: 10px;
+}
+
+.questionBox::-webkit-scrollbar-track,
+.answerBox::-webkit-scrollbar-track {
+  background-color: #0a0a0a;
+}
+
+/* === FLOATING ANSWER BUTTON === */
+.ansBtn {
+  position: absolute;
+  bottom: 15px;
+  right: 17px;
+  background: linear-gradient(90deg, #00bfff, #00e6ff);
+  color: #000;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(0, 191, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.ansBtn:hover {
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.ansBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* === 🌈 GRADIENT TEXT FOR “Thinking...” === */
+.gradientText {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #ffffff, #00ffff, #00bfff, #ffffff);
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gradientTextFlow 3s linear infinite;
+}
+
+/* === 🧠 STATUS BOX FOR “Generating Answer / Diagram” === */
+.statusBox {
+  background: linear-gradient(270deg, #00bfff, #ff00ff, #00ffcc, #00bfff);
+  background-size: 600% 600%;
+  animation: gradientFlow 3s ease infinite, pulseGlow 2s ease-in-out infinite;
+  color: white;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  padding: 12px 18px;
+  font-family: "Orbitron", sans-serif;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+}
+
+/* === 🖼️ GENERATED IMAGE CONTAINER === */
+.imageContainer {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.imageContainer img {
+  width: 100%;
+  max-height: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+  object-fit: contain;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* === ✨ ANIMATIONS === */
+@keyframes gradientTextFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+  }
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 6px rgba(0, 191, 255, 0.5),
+      0 0 10px rgba(0, 191, 255, 0.3);
+  }
+  to {
+    text-shadow: 0 0 25px rgba(0, 191, 255, 0.9),
+      0 0 40px rgba(0, 191, 255, 0.7);
+  }
+}
+
+
+/* === ERROR BOX (red) === */
+.errorBox {
+  background: linear-gradient(180deg, rgba(255, 80, 80, 0.12), rgba(255, 40, 40, 0.08));
+  border: 1px solid rgba(255, 80, 80, 0.35);
+  color: #ffdede;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 0 12px rgba(255, 60, 60, 0.12);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Slight spacing for diagram status variant (optional) */
+.diagramStatus {
+  margin-top: 1rem;
+}
+
+/* 🔴 Error below diagram */
+.diagramError {
+  background: rgba(255, 40, 40, 0.15);
+  border: 1px solid rgba(255, 60, 60, 0.4);
+  color: #ffb3b3;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-top: 1rem;
+  box-shadow: 0 0 10px rgba(255, 60, 60, 0.2);
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* === SCROLL FADE-IN ANIMATIONS === */
+.fade-in-left,
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(0);
+  transition: all 1s ease;
+}
+
+.fade-in-left {
+  transform: translateX(-60px);
+}
+
+.fade-in-right {
+  transform: translateX(60px);
+}
+
+.fade-in-left.visible,
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+
+
+

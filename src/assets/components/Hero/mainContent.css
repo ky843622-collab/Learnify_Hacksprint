@@ -1,0 +1,179 @@
+.mainWrapper {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: white;
+  font-family: "Outfit", sans-serif;
+  z-index: 10;
+  max-width: 500px;
+}
+
+/* --- Text Section --- */
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.mainContent h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.mainContent h1 span {
+  color: #00d4ff;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+  cursor: pointer;
+}
+
+.mainContent h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 10px;
+}
+
+/* --- Info Card --- */
+.infoCard {
+  position: absolute;
+  top: 130%; /* directly below mainContent */
+  left: 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  padding: 20px;
+  border-radius: 20px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  width: 450px;
+  transition: all 0.8s ease;
+}
+
+/* show card on hover */
+.clickable:hover ~ .infoCard,
+.mainWrapper:hover .infoCard {
+  display: flex;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* inner info layout */
+.mainInfo {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.mainInfo img {
+  width: 100px;
+  border-radius: 20px;
+}
+
+.arrowKapil {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  font-size: 1.8rem;
+  color: #00d4ff;
+  cursor: pointer;
+  transition: transform 0.8s ease, color 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 6px rgba(0, 212, 255, 0.6));
+}
+
+.mainWrapper h1:hover .arrowKapil {
+  transform: rotate(270deg);
+  color: #00ffff;
+  filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.8));
+}
+
+
+/* fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+}
+
+.infoPara {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.infoPara p {
+  margin-bottom: 10px;
+}
+
+.btnCollaborate {
+  position: relative;
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  scale: 1.1;
+  background: transparent;
+  border-radius: 30px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  font-family: "Outfit", sans-serif;
+  transition: color 0.3s ease, transform 0.3s ease;
+  border: none;
+}
+
+/* Gradient border trick using pseudo-elements */
+.btnCollaborate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  padding: 2px;
+  background: linear-gradient(135deg, #00d4ff, #007bff, #00ffa3);
+  -webkit-mask-image: none;
+  mask-image: none;
+  z-index: -1;
+  transition: all 0.4s ease;
+}
+
+/* Inner background (fills transparent center) */
+.btnCollaborate::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 28px;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+  transition: all 0.4s ease;
+}
+
+/* Hover effect */
+.btnCollaborate:hover {
+  color: #111;
+  transform: translateY(-4px);
+}
+
+.btnCollaborate:hover::after {
+  background: linear-gradient(135deg, #00d4ff, #007bff);
+}
+
+.btnCollaborate:hover::before {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.7);
+}
+
+
+.contactBtn{
+  position: absolute;
+  bottom: 15px;
+  right: 17px;
+  z-index: 10;
+}
